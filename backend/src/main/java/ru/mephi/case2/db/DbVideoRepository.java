@@ -14,9 +14,9 @@ import java.util.Map;
 
 public class DbVideoRepository implements VideoRepository {
 
-    private final String queryOut = "[SQL]: OUT ";
-    private final String queryIn  = "[SQL]: IN ";
-    private final String queryErr = "[SQL]: ERROR ";
+    private final String queryOut = "[SQL]: OUT: ";
+    private final String queryIn  = "[SQL]: IN: ";
+    private final String queryErr = "[SQL]: ERROR: ";
 
 
 
@@ -52,7 +52,7 @@ public class DbVideoRepository implements VideoRepository {
         String sql = "INSERT INTO video_stats (url_id, stats, status, created_at) VALUES (?, ?, ?, ?)";
         try (Connection conn = Postgresql.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+            BackendLogger.log(queryOut + sql);
             int inserted = 0;
             for (var entry : urlViewsMap.entrySet()) {
                 String url = entry.getKey();
