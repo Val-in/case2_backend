@@ -1,1 +1,1 @@
-PATH_TO_BOT_LOG_FILE = 'a'
+PATH_TO_BOT_LOG_FILE = './bot.log'
