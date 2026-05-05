@@ -29,7 +29,7 @@
 
 ## Технологический стек
 
-*   **Бэкенд:** Java 21, Maven
+*   **Бэкенд:** Java 17, Maven
 *   **Телеграм-бот:** Python 3.10, aiogram
 *   **База данных:** PostgreSQL 14
 *   **Оркестрация:** Docker, Docker Compose
